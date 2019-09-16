@@ -1,0 +1,64 @@
+@import 'configuration-vars';
+
+.navbar-container {
+
+  height: $navbar-container-height;
+  width: 100%;
+
+}
+
+.navbar-header-container {
+
+  background-color: $ut-color-purple;
+  height: 40px;
+  text-align: center;
+  width: 100%;
+
+}
+
+.navbar-menu {
+
+  height: 100%;
+  position: relative;
+  width: 100%;
+
+}
+
+.navbar-menu-container {
+
+  background-color: $ut-color-custom-accent-light-purple;
+  height: 40px;
+  width: 100%;
+
+}
+
+.navbar-menu-item-container {
+
+  color: white;
+  font-size: 18px;
+  line-height: 37px;
+  text-align: center;
+  width: 200px;
+
+}
+
+.navbar-menu-item-indicator {
+
+  height: 3px;
+  width: 100%;
+
+}
+
+.navbar-header-title-text {
+
+  color: white;
+  font-size: 22px;
+  line-height: 40px;
+
+}
+
+.is-nav-selected > .navbar-menu-item-indicator {
+
+  background-color: white;
+
+}

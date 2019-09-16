@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+
+    <meta charset="utf-8"/>
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    {% load staticfiles %}
+    {% load custom_templates %}
+
+    <title>NanoSourcer Admin</title>
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static "src/css/legacy/bootstrap.min.css" %}"/>
+    <link rel="stylesheet" type="text/css"
+          href="{% static "src/css/legacy/bootstrap-theme.min.css" %}"/>
+
+    <style>
+
+        .analytics-cell {
+
+            overflow-x: scroll;
+            width: 25%;
+
+        }
+
+    </style>
+
+</head>
+
+    <body>
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                    <h3>User Analytics</h3>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                    <div class="table-responsive" style="height:600px; overflow-y: scroll;">
+
+                        <table class="table-striped" style="width: 100%;">
+
+                            <thead>
+                                
+                                <tr>
+                                    
+                                    <th>
+
+                                        User 
+                                        <span id="user-sort" class="glyphicon glyphicon glyphicon-sort-by-alphabet" style="float: right; margin-right: 5px;"></span>
+
+                                    </th>
+                                    <th>
+
+                                        Image
+                                        <span id="image-sort" class="glyphicon glyphicon glyphicon-sort-by-alphabet" style="float: right; margin-right: 5px;"></span>
+
+                                    </th>
+                                    <th>
+
+                                        Label
+                                        <span id="label-sort" class="glyphicon glyphicon glyphicon-sort-by-alphabet" style="float: right; margin-right: 5px;"></span>
+
+                                    </th>
+
+                                    <th>
+
+                                        URI
+                                        <span id="uri-sort" class="glyphicon glyphicon glyphicon-sort-by-alphabet" style="float: right; margin-right: 5px;"></span>
+
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+                            <tbody id="sortable-table">
+                                
+                                {% for item in query_main %}
+
+                                    <tr class="analytics-row">
+
+                                        <td class="analytics-cell">{{ item.0 }}, {{ item.1 }} ({{ item.2 }})</td>
+                                        <td class="analytics-cell">
+                                            <a target="_blank" href="https://islandora716.ctl.utexas.edu:8443/fedora/objects/{{ item.4 }}/datastreams/JPG/content">
+                                                {{ item.4 }}
+                                            </a>
+                                        </td>
+                                        <td class="analytics-cell">{{ item.6 }}</td>
+                                        <td class="analytics-cell">
+                                            <a target="_blank" href="{{ item.5 }}">{{ item.5 }}</a>
+                                        </td>
+
+                                    </tr>
+
+                                {% endfor %}
+
+                            </tbody>
+
+                    </table>
+
+                    </div>
+                
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+    <script src="{% static "src/js/vendor/jquery-3.1.0.js" %}"></script>
+    <script src="{% static "src/js/legacy/bootstrap.min.js" %}"></script>
+    <script src="{% static "src/js/legacy/userAnalytics.js" %}"></script>
+
+</html>

@@ -1,0 +1,82 @@
+body {
+    font-family: "Lucida Grande", pictos, Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    color: #444;
+    margin: 0;
+}
+
+a {
+    color: #076ecb;
+    text-decoration:none;
+    margin-left: 1px;
+}
+a:hover, a:focus, a:active {
+    outline: gray solid thin;
+}
+
+.panel {
+    margin: 0.5em 0.5em 0.5em 0.5em;
+}
+
+.admin-panel {
+   padding: 0.2em 1.2em 0.2em 1.2em;
+}
+
+#update_message_box {
+    margin: 0.5em 0.5em 0.5em 0.5em;
+    padding: 0.2em 1.2em 0.2em 1.2em;
+    border: 1px solid red;
+    color: red;
+}
+
+.admin_review_gaz_user_box {
+    max-width: 12em;
+    text-align:center;
+}
+
+.admin_review_gaz_user_menu {
+   height: 1em;
+   text-align:center;
+    padding-left: 0.5em;
+}
+
+.results_table_body tr.gaz_selection_true {
+    border: 1px solid lightGray;
+    background-color: #fff2c5;
+}
+
+.results_table_body tr.gaz_selection_false {
+}
+
+.results_table thead th {
+    padding: 0 0.5em 0.3em 0.5em;
+}
+
+.results_table_body td {
+    vertical-align: top;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    border-right: 1px solid lightGray;
+
+}
+
+.admin-metadata-table {
+    width: 40em;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-metadata-table li {
+    list-style: none;
+    padding: 0.5em;
+}
+
+.admin-metadata-table li:nth-child(even) {background: #ecf8ff}
+.admin-metadata-table li:nth-child(odd) {background: #f0fffa}
+
+.admin_emphasize_text {
+    color: red;
+}
+
+.admin_review_image_panel {
+   height: 40em;
+}

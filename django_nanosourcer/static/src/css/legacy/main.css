@@ -1,0 +1,293 @@
+body {
+    
+    background-color: #D6D2C4;
+    color: #444;
+    font-family: 'Open Sans';
+    font-size: 10pt;
+    margin: 0;
+}
+
+a {
+    color: #076ecb;
+    text-decoration:none;
+    margin-left: 1px;
+}
+a:hover, a:focus, a:active {
+    outline: gray solid thin;
+}
+
+.date_help {
+    font-style: italic;
+    font-size: 9pt;
+}
+
+.panel {
+    margin: 0.5em 0.5em 0.5em 0.5em;
+}
+
+#image_widget {
+    padding: 1em;
+    border: 1px solid lightGray;
+    width: 100%;
+    text-align: center;
+}
+
+#map_widget {
+    height: 400px;
+}
+
+.geo_bound_coordinates {
+    font-style: italic;
+    font-size: 8pt;
+    padding: 0.2em;
+}
+
+.item_header {
+    font-weight: bold;
+}
+
+.colContainer {
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+.buttonContainer {
+    margin: 0.5em;
+    text-align: left;
+}
+
+.imageContainer {
+    min-height: 10em;
+    max-height: 50em;
+}
+
+#current_selections_panel {
+    padding: 1em;
+    border: 1px solid lightGray;
+    width: 100%;
+}
+
+.result_filter_box {
+    overflow-y: auto;
+    border: 1px solid lightGray;
+    padding: 0.5em 0 0.5em 0;
+}
+
+.result_table {
+    overflow-x: auto;
+    overflow-y: auto;
+    white-space: nowrap;
+    height: 10em;
+    max-height: 10em;
+    border: 1px solid gray;
+    padding: 0.5em;
+}
+
+.selection_title {
+    font-style:italic;
+    margin-bottom:0.5em;
+}
+
+.selection_item {
+   margin-top: 0.5em;
+}
+
+.selection_item table {
+    margin: 0.5em 0.5em 0.5em 2em;
+    border: 1px solid lightGray;
+}
+
+.selection_item td {
+    padding: 0.5em;
+    border: 1px solid lightGray;
+}
+
+.search_widget {
+    height: 2em;
+    float:none;
+}
+
+.item_overflow_message {
+    color: red;
+}
+
+.margin_fix_top {
+    margin-top: 0.5em;
+}
+
+.scroll_container {
+    height: 10em;
+    overflow-x: auto;
+    overflow-y: auto;
+    white-space: nowrap;
+}
+
+
+.table-fixed thead {
+    width: 97%;
+    padding: 0 1em 0 1em;
+}
+.table-fixed tbody {
+    height: 10em;
+    overflow-y: auto;
+    width: 100%;
+}
+.table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
+    display: block;
+    padding: 0 0 0 0.5em;
+}
+.table-fixed tbody td, .table-fixed thead > tr> th {
+    float: left;
+    border-bottom-width: 0;
+    display: inline-table;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.sub_help {
+    font-style: italic;
+}
+
+#place_results_box {
+    display: none;
+}
+
+#period_results_box {
+    display: none;
+}
+
+#instructions_panel {
+    display: none;
+}
+
+
+.admin-panel {
+   padding: 0.2em 1.2em 0.2em 1.2em;
+}
+
+.metadata-item-header {
+    font-weight: bold;
+}
+
+.metadata-item-value {
+    padding-left: 0.5em;
+}
+
+.metadata-table {
+    margin: 0;
+    padding: 0;
+}
+
+.metadata-table li {
+    list-style: none;
+    padding: 0.5em;
+}
+
+#select_place_dynamic {
+    font-weight: bold;
+    padding-left: 1em;
+}
+
+#select_period_dynamic {
+    font-weight: bold;
+    padding-left: 1em;
+}
+
+.select_dynamic_subhead {
+    font-weight: normal;
+    font-style: italic;
+}
+
+.results_column {
+    overflow: hidden;
+    vertical-align: top;
+    padding: 0.5rem;
+}
+
+.metadata-table li:nth-child(even) {background: #ecf8ff}
+.metadata-table li:nth-child(odd) {background: #f0fffa}
+
+
+#leaflet_image_widget {
+
+  height: 500px;
+  width: 100%;
+  border-radius: 3px;
+  z-index: 2;
+
+}
+
+#image_panel {
+    width: 100%;
+    height: 1px;
+}
+
+#metadata-section {
+    margin-top: 3em;
+}
+
+#metadata-panel {
+    display: block;
+    padding: 0;
+    margin: 2rem 0 1rem 0;
+}
+
+#metadata-toggle-view {
+    display: none;
+}
+
+.gaz_selection {
+    border: 1px solid lightGray;
+    background-color: #fff2c5;
+    margin-top: 0.2em;
+    padding: 0.5em 0 0.5em 0;
+}
+
+.inline-arrow {
+    font-size: 8pt;
+}
+
+.gaz_table_panel {
+    height: 20em;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+
+.results_error_box {
+    color: red;
+    margin: 0.5em;
+    padding: 0.5em;
+    border: 1px solid red;
+}
+
+.results_table {
+    width:100%;
+}
+
+.results_table_body {
+    width: 100%;
+    height: inherit;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.results_table_body tr:nth-child(even) {background: rgba(47, 135, 163, 0.25)}
+.results_table_body tr:nth-child(odd) {background: #FFFFFF}
+
+#date_begin_error {
+    color: red;
+    border: 1px solid red;
+    display: none;
+}
+
+#date_end_error {
+    color: red;
+    border: 1px solid red;
+    display: none;
+}
+
+.keyword_error {
+    color: red;
+    border: 1px solid red;
+    display: none;
+}

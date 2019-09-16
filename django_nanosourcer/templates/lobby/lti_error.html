@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+
+    {% load staticfiles %}
+    {% load custom_templates %}
+
+    <title>Nanosourcer - Application Error</title>
+
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />  
+
+    <link rel="stylesheet" type="text/css" href="{% static "src/css/legacy/lobby.css" %}"/>
+
+</head>
+
+<body>
+
+<div class="mainContentFrame">
+
+    <h3 class="pageTitle">
+        Nanosourcer - Application Error
+    </h3>
+
+    <h4 class="pageSubTitle">
+
+        {% if err_title %}
+            {{ err_title }}
+        {% else %}
+            Please restart application from Canvas menu.
+        {% endif %}
+
+    </h4>
+
+    <div class="errorTextBox">
+
+        {% if err_message %}
+            {{ err_message }}
+        {% else %}
+            An error has occurred. Please restart application from Canvas menu.
+        {% endif %}
+
+    </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script>
+
+
+    function sendLtiFrameResizeMessage(offset) {
+
+        // var container = window.parent,
+        //         isInFrame = _.isFunction(container.postMessage);
+
+        /*
+         function sendResizeMessage(offset) {
+         if (isInFrame) {
+         var message = '{ "subject": "lti.frameResize", "height": ' + ($('body').height() + offset) + ' }';
+         container && typeof container.postMessage =='function'&& container.postMessage(message, '*');
+         }
+         }
+         */
+
+        // offset = 40;
+
+        // if (isInFrame) {
+        //     parent.postMessage(
+        //             JSON.stringify({
+        //                 subject: 'lti.frameResize',
+        //                 height: $(document).height() + offset + "px"
+        //             }), '*');
+        // }
+    }
+
+
+    $(document).ready(function () {
+        sendLtiFrameResizeMessage(40);
+    });
+
+</script>
+
+
+</body>
+</html>
+
+

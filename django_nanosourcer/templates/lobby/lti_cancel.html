@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+
+    {% load staticfiles %}
+    {% load custom_templates %}
+
+    <title>Nanosourcer</title>
+
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />  
+
+    <link rel="stylesheet" type="text/css" href="{% static "src/css/main.min.css" %}"/>
+
+</head>
+
+<body>
+
+<div class="mainContentFrame">
+
+    <h3 class="pageTitle">
+    Nanosourcer Application
+    </h3>
+
+    <div class="pageSubTitle">
+
+        {% if err_title %}
+            {{ err_title }}
+        {% else %}
+            User cancelled operation.
+        {% endif %}
+
+    </div>
+    <p></p>
+
+    <div class="errorTextBox">
+
+        {% if err_message %}
+            {{ err_message }}
+        {% else %}
+            User cancelled operation. Please restart application from Canvas menu.
+        {% endif %}
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
+
+

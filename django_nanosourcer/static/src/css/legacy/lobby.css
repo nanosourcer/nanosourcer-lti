@@ -1,0 +1,168 @@
+body {
+    font-family: "Lucida Grande",pictos,sans-serif,Arial,Helvetica;
+    font-size: 9pt;
+    color: #444;
+    margin: 0;
+}
+
+a {
+    color: #076ecb;
+    text-decoration:none;
+    margin-left: 1px;
+}
+a:hover, a:focus, a:active {
+    outline: gray solid thin;
+}
+
+table {
+    font-size: 9pt;
+}
+
+tr {
+    font-size: 9pt;
+}
+
+td {
+    font-size: 9pt;
+}
+
+.mainContentFrame {
+    min-width: 600px;
+    width: 100%;
+    margin: 20px 30px 10px 30px;
+    overflow:hidden;
+}
+
+.mainStepFrame {
+     min-width: 750px;
+     overflow:hidden;
+ }
+
+
+
+.titleBox {
+     font-size: 17pt;
+     font-weight: bold;
+     width: 100%;
+     color: #000;
+     background-color: #dedede;
+     padding: 18px 16px 18px 30px;
+     margin: 0 0 0 0;
+ }
+
+.errorTextBox {
+    font-size: 12pt;
+    width: 640px;
+    color: #000;
+    background-color: #FFF;
+    padding: 8px 16px 18px 30px;
+    border: 1px solid red;
+}
+
+.optionSection {
+    margin: 15px 0 15px 0;
+}
+
+.processingMessageDiv {
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    font-family: Verdana, Arial, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 14pt;
+    background-color: #FFF;
+    border: 2px solid #e30203;
+    color: #e30203;
+    margin-left: 15px;
+    padding: 20px;
+    width: 300px;
+    display:none;
+    position: absolute;
+    z-index: 50;
+}
+
+.downloadingMessageDiv {
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    font-family: Verdana, Arial, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 14pt;
+    background-color: #FFF;
+    border: 2px solid #e30203;
+    color: #e30203;
+    margin: 5px 2px 2px 15px;
+    padding: 20px;
+    width: 500px;
+    display:none;
+
+}
+
+.highlightNotice {
+    font-size: 10pt;
+    color: #e30203;
+}
+
+
+.headerBar {
+    position: relative;
+    float: left;
+    background-color: #d35900;
+    width: 100%;
+    height: 50px;
+    padding: 10px 10px 5px 10px;
+}
+
+.headerLogoBox {
+    position: relative;
+    float: left;
+    margin-right: 30px;
+}
+
+.headerLinksBox {
+    position: relative;
+    float:left;
+    padding-top: 16px;
+    font-size:12pt;
+}
+.headerLinksBox a:link { color: white;}
+.headerLinksBox a:hover { color:white;}
+.headerLinksBox a:visited { color:white;}
+
+
+.boxFloat {
+    float:left;
+    position:relative;
+}
+
+.boxFloatRight {
+    float:right;
+    position:relative;
+}
+
+.boxTitle {
+    font-size: 12pt;
+    color: dodgerblue;
+    font-weight: bold;
+    width: 600px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+
+}
+
+.cf:before, .cf:after { content: ""; display: table; }
+.cf:after { clear: both; }
+.cf { zoom: 1; margin: 0; padding: 0; }
+
+.emphasize {
+    font-weight:bold;
+}
+
+.noContentFoundMessage {
+padding: 10px;
+margin:15px;
+font-size:11pt;
+font-style:italic;
+color:black;
+}
+

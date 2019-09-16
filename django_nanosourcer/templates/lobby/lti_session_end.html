@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+
+    {% load staticfiles %}
+    {% load custom_templates %}
+
+    <title>Nanosourcer - Session Ended</title>
+
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />  
+
+    <script src="{% static "bower_components/jquery/dist/jquery.min.js" %}"></script>
+    <script src="{% static "bower_components/underscore-min.js" %}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static "src/css/main.min.css" %}"/>
+
+</head>
+
+<body>
+
+<div class="mainContentFrame">
+
+
+    <h3 class="pageTitle">
+        Nanosourcer - Session Ended
+    </h3>
+
+    <div class="errorTextBox">
+
+        <h4 class="pageTitle">
+            Thank you for ending your Nanosourcer session.
+        </h4>
+
+        This helps to keep your Nanosourcer data secure in a shared computer environment.
+        {% if return_url %}
+            <p></p>
+            <a target="_parent" href="{{ return_url }}">Return to Canvas Course page</a>
+        {% endif %}
+
+    </div>
+
+</div>
+
+<script>
+
+    sessionStorage.removeItem('lti_session_key');
+
+</script>
+
+
+</body>
+</html>
+
+

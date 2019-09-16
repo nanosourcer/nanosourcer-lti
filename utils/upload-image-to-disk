@@ -1,0 +1,16 @@
+# Mount Remote Drive with Images
+# for Mac OS X
+
+cd ~/
+mkdir battlescans
+mount_smbfs //your-path/battlescans ~/battlescans
+
+cd battlescans/The Battle Image Collection
+
+# Secure Copy of files from local to remote server
+# assuming you have stored your .pem file in your ~/.ssh/ folder
+
+# (find . -name "*F.tif") Finds only files with "Front" of photo
+# islandoraXXX replace with your instance
+scp -i ~/.ssh/your-secret.pem $(find . -name "BIC*" -not -name "*.R.*") ubuntu@islandoraXXX:~/nanosourcer/battleimagecollection
+

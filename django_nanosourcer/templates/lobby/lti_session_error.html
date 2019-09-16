@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en-us"
+      lang="en-us">
+<head>
+
+    {% load staticfiles %}
+    {% load custom_templates %}
+
+    <title>Nanosourcer - Session Error</title>
+
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />  
+
+    <link rel="stylesheet" type="text/css" href="{% static "src/css/main.min.css" %}"/>
+
+     <script src="{% static "bower_components/jquery/dist/jquery.min.js" %}"></script>
+     <script src="{% static "bower_components/underscore-min.js" %}"></script>
+
+    <style type="text/css">
+        .help-keyword {
+            font-weight: bold;
+            color: #5e07c3;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="mainContentFrame">
+
+    <h3 class="pageTitle">
+        Nanosourcer - Session Error
+    </h3>
+
+    <div class="errorTextBox">
+
+    <h4 class="pageSubTitle">
+
+        {% if err_title %}
+            {{ err_title }}
+        {% endif %}
+
+    </h4>
+
+
+        <div>
+            It looks like something isn't working... sorry about that. Here are a few things you could try to resolve it:
+            <p></p>
+            <ol>
+                <li>
+                    Log out completely, then log back in.
+                </li>
+                <li>
+                    Try a different browser.
+                </li>
+                <li>
+                    Check whether your browser's settings are restricting cookies in any way.
+                </li>
+            </ol>
+            <p></p>
+            If those fixes don't help, contact the help desk at 512-475-9400 (or help@its.utexas.edu) and
+            tell them that you need help adjusting your browser's cookie settings.
+            <p></p>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    function sendLtiFrameResizeMessage(offset) {
+
+        var container = window.parent,
+                isInFrame = _.isFunction(container.postMessage);
+
+        /*
+         function sendResizeMessage(offset) {
+         if (isInFrame) {
+         var message = '{ "subject": "lti.frameResize", "height": ' + ($('body').height() + offset) + ' }';
+         container && typeof container.postMessage =='function'&& container.postMessage(message, '*');
+         }
+         }
+         */
+
+        offset = 40;
+
+        if (isInFrame) {
+            parent.postMessage(
+                    JSON.stringify({
+                        subject: 'lti.frameResize',
+                        height: $(document).height() + offset + "px"
+                    }), '*');
+        }
+    }
+
+
+    $(document).ready(function () {
+        sendLtiFrameResizeMessage(40);
+        lti_session_key = sessionStorage.getItem('lti_session_key')
+    });
+
+</script>
+
+
+
+</body>
+</html>
+
+

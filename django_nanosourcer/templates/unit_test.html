@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+    <head>
+
+        <meta charset="utf-8"/>
+        <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        {% load staticfiles %}
+        {% load custom_templates %}
+
+        <title>NanoSourcer Unit Tests</title>
+
+        <link rel="stylesheet" href="{% static "src/css/vendor/qunit-2.0.1.css" %}">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="{% static "bower_components/bootstrap/dist/js/bootstrap.min.js" %}"></script>
+        <script src="{% static "bower_components/leaflet/dist/leaflet.js" %}"></script>
+        <script src="{% static "bower_components/spin.js/spin.js" %}"></script>
+        <script src="{% static "bower_components/spin.js/jquery.spin.js" %}"></script>
+        <script src="{% static "js/vendor/leaflet-locationfilter/src/locationfilter.js" %}"></script>
+        <script src="{% static "js/vendor/jquery-ui-1.11.4.custom.js" %}"></script>
+        <script src="{% static "js/custom/nanosourcerLib.js" %}"></script>
+        <script src="{% static "js/custom/main.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/vendor/apiGateway-js-sdk/lib/axios/dist/axios.standalone.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/vendor/apiGateway-js-sdk/lib/CryptoJS/rollups/hmac-sha256.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/vendor/apiGateway-js-sdk/lib/CryptoJS/components/hmac.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/vendor/apiGateway-js-sdk/lib/CryptoJS/components/enc-base64.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/vendor/apiGateway-js-sdk/lib/url-template/url-template.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/vendor/apiGateway-js-sdk/lib/apiGatewayCore/sigV4Client.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/vendor/apiGateway-js-sdk/lib/apiGatewayCore/apiGatewayClient.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/vendor/apiGateway-js-sdk/lib/apiGatewayCore/simpleHttpClient.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/vendor/apiGateway-js-sdk/lib/apiGatewayCore/utils.js" %}"></script>
+        <script type="text/javascript" src="{% static "js/vendor/apiGateway-js-sdk/apigClient.js" %}"></script>
+
+
+    </head>
+
+    <body>
+
+        <div id="qunit"></div>
+        <div id="qunit-fixture"></div>
+        <script src="{% static "js/vendor/qunit-2.0.1.js" %}"></script>
+        <script src="{% static "js/custom/unitTests.js" %}"></script>
+
+    </body>
+
+</html>

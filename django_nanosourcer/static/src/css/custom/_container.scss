@@ -1,0 +1,51 @@
+@import 'configuration-vars';
+@import 'media-queries';
+
+#card-container {
+
+  height: 100%;
+  position: relative;
+
+}
+
+.section-container {
+
+  height: inherit;
+  margin: 0;
+  width: 100%;
+
+}
+
+.navigation-body-section {
+
+  height: 10%;
+  width: 100%;
+
+}
+
+.status-body-section {
+
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  height: 20%;
+  justify-content: center;
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+
+}
+
+.card-body-section {
+
+  height: 100%;
+  margin-top: 5%;
+
+}
+
+.card-container {
+
+  height: 100%;
+  width: 100%;
+
+}
