@@ -1,0 +1,80 @@
+.modal-background-shadow {
+
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  animation: modal-fade-in 1s ease-in-out 0s 1 normal;
+
+  @include responsive-card-padding(0px, $xs-width-max, 0px);
+  @include responsive-card-padding($sm-width-min, $sm-width-max, 0px);
+  @include responsive-card-padding($md-width-min, $md-width-max, 5%);
+  @include responsive-card-padding($lg-width-min, 10000px, 7.5%);
+
+}
+
+#submit-modal-card > .card-body-container {
+
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 200px;
+  max-height: 600px;
+  overflow-y: scroll;
+
+
+}
+
+.modal-container {
+
+  background-color: white;
+  height: 300px;
+  z-index: 1001;
+
+}
+
+@keyframes modal-fade-in {
+
+  from {opacity: 0.0;}
+  to {opacity: 1.0;}
+
+}
+
+@keyframes modal-fade-out {
+
+  from {opacity: 1.0;}
+  to {opacity: 0.0;}
+
+}
+
+#submit-modal-card-yes-btn {
+
+  cursor: pointer;
+
+}
+
+#submit-modal-card-cancel-btn {
+
+  cursor: pointer;
+
+}
+
+#skip-modal-card-yes-btn {
+
+  cursor: pointer;
+
+}
+
+#skip-modal-card-cancel-btn {
+
+  cursor: pointer;
+
+}
+

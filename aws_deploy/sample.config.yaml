@@ -1,0 +1,6 @@
+project_name: django-nanosourcer
+aws_account_dict: 
+    main: ls-lta
+eb_env_dict: 
+    prod: nanosourcer
+    beta: nanosourcer-beta

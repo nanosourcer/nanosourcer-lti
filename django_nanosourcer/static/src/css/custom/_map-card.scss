@@ -1,0 +1,203 @@
+#map-widget {
+
+  height: 400px;
+  margin: 15px 0;
+  width: 100%;
+
+}
+
+.map-results-container {
+
+  max-height: 400px;
+  margin: 15px 0;
+  overflow-y: scroll;
+  width: 100%;
+
+}
+
+.map-container {
+
+
+
+}
+
+.place-search-btn {
+
+
+
+}
+
+.input-container {
+
+  margin: 0 15px;
+
+}
+
+div.location-filter {
+
+  clear: none;
+
+}
+
+.red-dot {
+
+  color: red;
+  font-size: 20px;
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  text-align: center;
+
+}
+
+.green-dot {
+
+  color: green;
+  font-size: 20px;
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  text-align: center;
+
+}
+
+.coordinate-container {
+
+  margin-bottom: 10px;
+
+}
+
+.coordinate-text {
+
+  font-size: 20px;
+  line-height: 20px;
+
+}
+
+.result-message {
+
+  color: white;
+  background-color: rgba(0, 0, 255, 0.36);
+  width: 100%;
+
+}
+
+.leaflet-maker.leaflet-marker-icon:first-child {
+
+  background-color: red;
+  border-radius: 13px;
+  height: 13px;
+  width: 13px;
+
+}
+
+.popup-text {
+
+  font-size: 14px;
+
+}
+
+a.popup-link-text {
+
+  color: $ut-color-burnt-orange;
+  font-size: 12px;
+  margin-left: 5px;
+
+}
+
+.popup-metadata-text {
+
+  font-size: 14px;
+  margin-left: 5px;
+
+}
+
+.popup-text-bold {
+
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 5px;
+
+}
+
+.window-container {
+
+  background-color: white;
+  height: 100%;
+    max-height: 400px;
+  padding: 15px;
+  width: 100%;
+
+}
+
+.period-container {
+
+  background-color: white;
+  height: 100%;
+  padding: 15px 0;
+  width: 100%;
+
+}
+
+.period-results-container {
+
+  height: 300px;
+  overflow-y: scroll;
+  width: 100%;
+
+}
+
+.metadata-row {
+
+  margin-bottom: 10px;
+
+}
+
+.metadata-row-container {
+
+  height: auto;
+
+}
+
+.marker-box,
+.marker-box-place {
+
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 61px;
+  justify-content: center;
+  width: 100%;
+
+}
+
+.metadata-row-marker,
+.matadata-row-marker-place {
+
+  border: 2px solid #005F86;
+  border-radius: 25px;
+  height: 26px;
+  width: 26px;
+
+}
+
+.metadata-row-marker.active-meta-marker,
+.matadata-row-marker-place.active-meta-marker-place {
+
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+}
+
+.metadata-row-marker.active-meta-marker > .metadata-row-marker-dot,
+.matadata-row-marker-place.active-meta-marker-place > .metadata-row-marker-dot-place {
+
+  background-color: #005F86;
+  border-radius: 16px;
+  height: 16px;
+  width: 16px;
+
+}

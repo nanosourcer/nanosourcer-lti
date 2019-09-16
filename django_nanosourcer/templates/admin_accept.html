@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+
+    <meta charset="utf-8"/>
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    {% load staticfiles %}
+    {% load custom_templates %}
+
+    <title>NanoSourcer Admin Review and Acceptance</title>
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static "bower_components/bootstrap/dist/css/bootstrap.min.css" %}"/>
+    <link rel="stylesheet" type="text/css"
+          href="{% static "bower_components/bootstrap/dist/css/bootstrap-theme.min.css" %}"/>
+    <link rel="stylesheet" type="text/css"
+          href="{% static "bower_components/leaflet/dist/leaflet.css" %}"/>
+    <link rel="stylesheet" type="text/css"
+          href="{% static "js/vendor/leaflet-locationfilter/src/locationfilter.css" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "src/css/legacy/main.css" %}"/>
+
+</head>
+
+<body>
+
+{% include "admin_accept_header.html" %}
+
+<form method="post" action="/admin-accept-update/"> {% csrf_token %}
+
+    <input type="hidden" name="lk" value="{{ lti_session_key }}"/>
+    <input type="hidden" name="course_image_area_id" value="{{ course_image_area_id }}"/>
+    <input type="hidden" name="course_id" value="{{ course_id }}"/>
+    <input type="hidden" name="collection_id" value="{{ collection_id }}"/>
+    <input type="hidden" name="course_round_id" value="{{ course_round_id }}"/>
+    <input type="hidden" name="owner_id" value="{{ owner_id }}"/>
+
+    <div class="container-fluid">
+
+        <div class="row admin-panel">
+
+            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                <a href="/admin/?lk={{ lti_session_key }}">Return to main Admin page</a>
+
+            </div>
+
+            <!--
+            <div class="col-lg-12 col-md-12 col-sm-12">
+
+                <a href="">Student stats and progress</a>
+            </div>
+            -->
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+
+                <div class="row admin-panel">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="panel">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="panel">
+                                    Course level
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="panel">
+                                    Explanation for criteria for matches.
+                                </div>
+                                <div class="panel">
+                                    {% if total_threshold_images == 1 %}
+                                        {{ total_threshold_images }} image remains for review
+                                    {% else %}
+                                        {{ total_threshold_images }} images remain for review
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="panel">
+                                    Metadata shown to students:
+                                    <div class="panel-body">
+                                        <ul class="metadata-table">
+                                            {% for item in metadata_list %}
+                                                {% if item.label or item.uri %}
+                                                    <li>
+                                                        <div class="metadata-item-header">
+                                                            {{ item.type }}
+                                                        </div>
+                                                        {% if item.label %}
+                                                            <div class="metadata-item-value">
+                                                                Label: {{ item.label }}
+                                                            </div>
+                                                        {% endif %}
+                                                        {% if item.uri %}
+                                                            <div class="metadata-item-value">
+                                                                URI: {{ item.uri }}
+                                                            </div>
+                                                        {% endif %}
+                                                    </li>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+
+                <div class="row admin-panel">
+
+
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="panel">
+                            <img src="{{ fedora_image_url }}"/>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    {% for st, st_info in threshold_gaz_info.items %}
+
+        <div class="row colContainer">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div>
+                    {{ st_info.search_type_name }}
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <table class="results_table">
+                            <thead>
+
+                            <tr>
+                                <th>
+                                    Select
+                                </th>
+                                <th>
+                                    Gazetteer URL
+                                </th>
+                                {% for label in st_info.vis_label_list %}
+                                    <th>
+                                        {{ label }}
+                                    </th>
+                                {% endfor %}
+                            </tr>
+                            </thead>
+                            <tbody class="results_table_body">
+                            {% for gaz_id, gaz_info in st_info.gaz_url_list.items %}
+                                <tr>
+                                    <td>
+                                        <input type="checkbox"
+                                               id="{{ st_info.search_type_id }}_{{ gaz_id }}"
+                                               name="gaz_selection"
+                                               value="{{ st_info.search_type_id }}_{{ gaz_id }}"
+                                        />
+                                    </td>
+                                    <td>
+                                        {{ gaz_info.gaz_url }}
+                                    </td>
+                                    {% for label_display_order, label_info  in gaz_info.gaz_label_info.items|sort %}
+                                        <td>
+                                            {{ label_info.label_value }}
+                                        </td>
+                                    {% endfor %}
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+    <div class="row colContainer">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <input type="submit" name="btn_save" value="Save Accepted Choices"/>
+            <input style="margin-left:0.5em;" type="submit" name="btn_cancel" value="Skip this image for now"/>
+        </div>
+    </div>
+
+</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="{% static "bower_components/bootstrap/dist/js/bootstrap.min.js" %}"></script>
+<script src="{% static "bower_components/leaflet/dist/leaflet.js" %}"></script>
+<script src="{% static "js/vendor/leaflet-locationfilter/src/locationfilter.js" %}"></script>
+<script src="{% static "js/custom/main.js" %}"></script>
+
+<script type="application/javascript">
+
+    lti_session_key = sessionStorage.getItem('lti_session_key');
+
+    var courseConfig = {{ init_course_config|safe }};
+
+    init_page_session(courseConfig);
+
+</script>
+
+{% include "page_footer.html" %}
+
+
+</body>
+</html>

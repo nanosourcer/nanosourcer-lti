@@ -1,0 +1,221 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+
+    <head>
+
+        <meta charset="utf-8"/>
+        <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <link rel="stylesheet" type="text/css" href="{% static "src/css/legacy/admin_main.css" %}">
+
+        <title>NanoSourcer Admin</title>
+
+    </head>
+
+    <body>
+
+        {% include "admin_page_header.html" %}
+
+        <div class="container-fluid">
+
+            <form method="post" action="/admin-update/"> {% csrf_token %}
+
+        {% if update_message %}
+        <div class="panel"><div id="update_message_box">{{ update_message|safe }}</div></div>
+        {% endif %}
+
+        <div class="row admin-panel">
+
+            <div class="col-lg-12 col-md-12 col-sm-12" style="margin-top:0.5em;">
+
+                <a href="/admin-accept/?lk={{ lti_session_key }}">Review crowd sourced image data</a>
+
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12" style="margin-top:0.2em;">
+
+                <a href="/admin-data?lk={{ lti_session_key }}">User Analytics</a>
+
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12" style="margin-top:0.2em;">
+
+                <a href="/download-adhoc-zip?lk={{ lti_session_key }}">Download zip file with ad-hoc query CSV files</a>
+
+            </div>
+
+        </div>
+
+        <div class="row admin-panel" style="margin-top:1em;">
+
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                Course level
+            </div>
+        </div>
+
+
+        <div class="row admin-panel">
+
+            <div class="col-lg-3 col-md-3 col-sm-3">
+
+                Select your Fedora image collection
+
+            </div>
+
+            <div class="col-lg-9 col-md-9 col-sm-9">
+
+                <div class="panel">
+
+                    <select id="course_collection_select"
+                            name="course_collection_select">
+                        <option value="">Select collection</option>
+                        {% for item in collection_list %}
+                            {% if item.is_active == 1 %}
+                                <option value="{{ item.collection_id }}" SELECTED>{{ item.title }}</option>
+                            {% else %}
+                                <option value="{{ item.collection_id }}">{{ item.title }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row admin-panel">
+
+            <div class="col-lg-3 col-md-3 col-sm-3">
+
+                Check Metadata Field(s) to display (Course level)
+
+            </div>
+
+            <div class="col-lg-9 col-md-9 col-sm-9">
+
+                <div class="panel" id="admin_metadata_select"></div>
+
+                {% for cm in course_metadata_list %}
+                    <div>
+                        {% if cm.is_selected == 1 %}
+                            <input type="checkbox"
+                                   name="course_metadata_select"
+                                   value="{{ cm.metadata_term_id }}" CHECKED />{{ cm.type_key }}
+                        {% else %}
+                            <input type="checkbox"
+                                   name="course_metadata_select"
+                                   value="{{ cm.metadata_term_id }}"/>{{ cm.type_key }}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+        <div class="row admin-panel">
+
+            <div class="col-lg-3 col-md-3 col-sm-3">
+
+                Select which search type(s) to show to students (at least one is required)
+
+            </div>
+
+            <div class="col-lg-9 col-md-9 col-sm-9">
+
+                <div class="panel">
+                    {% for item in course_search_types %}
+                        <div>
+                            {% if item.is_selected %}
+                                <input type="checkbox"
+                                       id="course_search_type_{{ item.type_key }}"
+                                       name="course_search_type_select"
+                                       value="{{ item.search_type_id }}" CHECKED />
+                                {{ item.type_name }}
+                            {% else %}
+                                <input type="checkbox"
+                                       id="course_search_type_{{ item.type_key }}"
+                                       name="course_search_type_select"
+                                       value="{{ item.search_type_id }}" />
+                                {{ item.type_name }}
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row admin-panel">
+
+            <div class="col-lg-3 col-md-3 col-sm-3">
+
+                Show # of matching student selections:
+            </div>
+
+            <div class="col-lg-9 col-md-9 col-sm-9">
+                <div class="panel">
+                    <select id="course_approve_threshold"
+                            name="course_approve_threshold">
+                        {% for num in approve_threshold_list %}
+                            {% if course_info.num_matching_selections == num %}
+                                <option value="{{ num }}" SELECTED>{{ num }}</option>
+                            {% else %}
+                                <option value="{{ num }}">{{ num }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="row admin-panel">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+
+            </div>
+
+        </div>
+
+        <div class="row admin-panel" style="margin-top:1em;">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <input type="submit" name="btnAdmin" value="Save"/>
+            </div>
+
+        </div>
+
+        <input type="hidden" name="lk" value="{{ lti_session_key }}"/>
+
+
+    </form>
+
+            <hr/>
+
+        </div>
+
+            <script src="{% static "src/js/vendor/jquery-3.1.0.js" %}"></script>
+            <script src="{% static "src/js/legacy/bootstrap.min.js" %}"></script>
+            <script src="{% static "src/js/vendor/leaflet-0.7.7.js" %}"></script>
+            <script src="{% static "src/js/vendor/leaflet.locationfilter.js" %}"></script>
+            <script src="{% static "src/js/legacy/admin_main.js" %}"></script>
+
+            <script type="application/javascript">
+
+                lti_session_key = sessionStorage.getItem('lti_session_key');
+
+                var adminConfig = {{ init_admin_config|safe }};
+
+                init_page_session(adminConfig);
+
+            </script>
+
+    </body>
+
+</html>

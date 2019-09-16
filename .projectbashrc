@@ -1,0 +1,4 @@
+source /etc/profile
+
+source ~/.bashrc
+source ~/.virtualenvs/nanosourcer/bin/activate

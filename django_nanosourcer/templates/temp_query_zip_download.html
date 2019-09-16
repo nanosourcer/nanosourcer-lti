@@ -1,0 +1,17 @@
+<html>
+<head>
+
+    {% load staticfiles %}
+    {% load custom_templates %}
+
+    <script src="{% static "js/custom/utils.js" %}"></script>
+</head>
+
+<body>
+Nanosourcer -- Adhoc Query zip download
+<p></p>
+
+    <a href="download-adhoc-zip?lk={{ lti_session_key }}">Download zip file with ad-hoc query CSV files</a>
+
+</body>
+</html>

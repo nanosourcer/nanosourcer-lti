@@ -1,0 +1,19 @@
+@import 'configuration-vars';
+
+html {
+
+  background-color: $ut-color-grey;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  margin: 0;
+  width: 100%;
+
+}
+
+body {
+
+  margin: 0;
+  margin-bottom: 5%;
+  width: inherit;
+
+}

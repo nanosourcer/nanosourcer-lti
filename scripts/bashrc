@@ -1,0 +1,13 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific aliases and functions
+set -o vi
+. /opt/python/current/env
+alias app='cd /opt/python/current/app && pwd'
+alias db='mysql -u $(echo $UTLS_DB_USER) -p$(echo $UTLS_DB_PASSWORD) -h $(echo $UTLS_DB_HOST) $(echo $UTLS_DB_NAME)'
+

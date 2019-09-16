@@ -1,0 +1,144 @@
+@import 'configuration-vars';
+@import 'media-queries';
+
+.card {
+
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px rgba(100, 100, 100, 0.25);
+  box-sizing: border-box;
+  max-height: 2000px;
+  margin-top: 5%;
+  margin-right: 5%;
+  width: 100%;
+
+  @include responsive-card-padding(0px, $xs-width-max, $xs-card-padding);
+  @include responsive-card-padding($sm-width-min, $sm-width-max, $sm-card-padding);
+  @include responsive-card-padding($md-width-min, $md-width-max, $md-card-padding);
+  @include responsive-card-padding($lg-width-min, 10000px, $lg-card-padding);
+
+  @include responsive-card-border-radius(0px, $xs-width-max, 0px);
+  @include responsive-card-border-radius($sm-width-min, $sm-width-max, 0px);
+  @include responsive-card-border-radius($md-width-min, $md-width-max, 3px);
+  @include responsive-card-border-radius($lg-width-min, 10000px, 3px);
+
+
+}
+
+.card-header-container {
+
+  display: flex;
+  justify-content: space-between;
+  height: 25px;
+  width: 100%;
+
+
+}
+
+.card-header-item {
+
+  //width: 100%;
+  //height: 100%;
+
+}
+
+.card-header-title {
+
+  color: rgb(151, 164, 170);
+  display: inline;
+  font-size: 16px;
+
+}
+
+.card-body-container {
+
+  border-top: 1px solid rgba(128, 128, 128, 0.32);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.32);
+  font-size: 14px;
+    min-height: 100px;
+  margin: 5px 0;
+  padding: 20px;
+  width: 100%;
+
+}
+
+.card-body-item {
+
+  height: 100%;
+  width: 100%;
+
+}
+
+.card-body-row {
+
+  box-shadow: 0 0 5px rgba(100, 100, 100, 0.25);
+
+}
+
+.card-footer-container {
+
+  height: 25px;
+  width: 100%;
+
+}
+
+.card-footer-item {
+
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+
+}
+
+.card-footer-btn-container {
+
+  align-items: center;
+  color: #8a8d92;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+
+}
+
+.card-footer-btn-icon {
+
+  margin-right: 25px;
+
+}
+
+.card-footer-btn-text {
+
+  font-size: 16px;
+
+}
+
+.card-item-placeholder {
+
+  color: white;
+  background-color: #c5c5c5;
+
+}
+
+//.card-container > .card {
+//
+//  margin-right: 10%;
+//  width: 90%;
+//
+//}
+//
+//.card-container > .card:first-child {
+//
+//  margin-left: 10%;
+//  margin-right: 10%;
+//  width: 80%;
+//
+//}
+//
+//div.flickity-slider > div.card {
+//
+//  margin-right: 15%;
+//  transform: translateX(12.5%);
+//  width: 80%;
+//
+//}

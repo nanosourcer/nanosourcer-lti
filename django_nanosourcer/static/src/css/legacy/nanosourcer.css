@@ -1,0 +1,90 @@
+html {
+
+    font-family: 'Open Sans';
+    font-size: 10pt;
+
+}
+
+body {
+
+    background-color: #D6D2C4;
+    color: #444;
+    height: 100%;
+    margin: 0;
+
+}
+
+@media(min-width: 451px) {
+
+    body {
+
+        padding-top: 125px;
+        padding-bottom: 25px;
+
+    }
+
+    .card-v3 {
+
+        background-color: white;
+        box-shadow: 2px 2px 5px rgba(100, 100, 100, 0.25);
+        text-align: center;
+        width: 80%;
+
+    }
+
+}
+
+@media(max-width: 450px) {
+
+    body {
+
+        padding-top: 115px;
+        padding-bottom: 15px;
+
+    }
+
+    .card-v3 {
+
+        background-color: white;
+        box-shadow: 2px 2px 5px rgba(100, 100, 100, 0.25);
+        height: inherit;
+
+    }
+
+}
+
+.custom-btn {
+
+    color: rgba(100, 100, 100, 1.0);
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.0);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 18px;
+    padding: 2px 12px;
+    text-align: center;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 100%;
+
+}
+
+.custom-btn-green {
+
+    background-color: rgba(67, 105, 91, 1.0);
+    border-color: rgba(67, 105, 91, 1.0);
+
+}
+
+.custom-btn-orange {
+
+    background-color: rgba(191, 87, 0, 1.0);
+    border-color: rgba(191, 87, 0, 1.0);
+
+}
+
+

@@ -1,0 +1,89 @@
+@import 'configuration-vars';
+
+@mixin responsive-padding($minimum-width, $maximum-width, $padding-sides) {
+
+  @media (min-width: $minimum-width) and (max-width: $maximum-width) {
+
+    padding: $padding-sides;
+
+  }
+
+}
+
+@mixin responsive-width($minimum-width, $maximum-width, $padding-sides, $width) {
+
+  @media (min-width: $minimum-width) and (max-width: $maximum-width) {
+
+    padding: $padding-sides;
+    width: $width;
+
+
+  }
+
+}
+
+@mixin responsive-card-padding($minimum-width, $maximum-width, $padding) {
+
+  @media (min-width: $minimum-width) and (max-width: $maximum-width) {
+
+    padding: $padding;
+
+
+  }
+
+
+}
+
+@mixin responsive-card-border-radius($minimum-width, $maximum-width, $radius) {
+
+  @media (min-width: $minimum-width) and (max-width: $maximum-width) {
+
+    border-radius: $radius;
+
+  }
+
+
+}
+
+@mixin responsive-card-body-width($minimum-width, $maximum-width, $flex-direction) {
+
+  @media (min-width: $minimum-width) and (max-width: $maximum-width) {
+
+    flex-direction: $flex-direction;
+
+  }
+
+}
+
+@mixin responsive-body-container-width($minimum-width, $maximum-width, $percent-padding, $width) {
+
+  @media (min-width: $minimum-width) and (max-width: $maximum-width) {
+
+    padding-left: $percent-padding;
+    padding-right: $percent-padding;
+    padding-top: $percent-padding / 4;
+    width: $width;
+
+  }
+
+}
+
+@mixin responsive-body-container-height($minimum-height, $maximum-height, $flex-basis) {
+
+  @media (min-height: $minimum-height) and (max-height: $maximum-height) {
+
+    flex-basis: $flex-basis;
+
+  }
+
+}
+
+@mixin responsive-image-height($minimum-height, $maximum-height, $max-height) {
+
+  @media (min-height: $minimum-height) and (max-height: $maximum-height) {
+
+    max-height: $max-height;
+
+  }
+
+}

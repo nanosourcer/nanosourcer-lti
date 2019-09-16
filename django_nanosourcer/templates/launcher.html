@@ -1,0 +1,32 @@
+<html>
+<head>
+
+    {% load staticfiles %}
+    {% load custom_templates %}
+
+    <script src="{% static "js/custom/utils.js" %}"></script>
+</head>
+
+<body>
+Nanosourcer is better full page. Launching in new window...
+<p></p>
+You may need to allow your browser to open the window as pop-up.
+<script>
+
+    // console.log('is_lti_launch   {{ is_lti_launch }}');
+    // console.log('lti_session_key {{ lti_session_key }}');
+
+    // alert('is_lti_launch   {{ is_lti_launch }}');
+    // alert('lti_session_key {{ lti_session_key }}');
+
+     set_or_validate_session('{{ is_lti_launch }}',
+             '{{ lti_session_key }}');
+
+     window.onload = function() {
+     window.open("/main/?lk={{ lti_session_key }}", "_blank");
+     }
+
+</script>
+
+</body>
+</html>

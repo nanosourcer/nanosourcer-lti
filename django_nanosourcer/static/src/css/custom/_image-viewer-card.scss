@@ -1,0 +1,47 @@
+@import "media-queries";
+
+.fedora-image {
+
+  height: auto;
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+
+}
+
+.image-viewer-image-container {
+
+
+  align-items: center;
+  background-color: rgba(200, 200, 200, 1.0);
+  display: flex;
+  height: 400px;
+  justify-content: center;
+
+}
+
+.metadata-container {
+
+  max-height: 400px;
+  padding: 10px;
+
+}
+
+.image-metadata-item-container {
+
+  font-size: 16px;
+
+}
+
+.image-metadata-title {
+
+  font-weight: bold;
+
+}
+
+.image-metadata-label {
+
+  margin-left: 5px;
+  overflow-x: scroll;
+
+}
