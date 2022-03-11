@@ -23,7 +23,7 @@ Naked==0.1.31
 oauth==1.0.1
 oauthlib==1.0.3
 pathspec==0.3.3
-Pillow==3.1.1
+Pillow==9.0.1
 ply==3.8
 progressbar==2.3
 progressbar2==3.6.2
